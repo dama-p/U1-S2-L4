@@ -100,6 +100,8 @@ console.log(check3and7(21));
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
+/* ONE LINER: return str2.split("").reverse().join(""); */
+
 const reverseString = function (str2) {
   let stringifiedValue = str2.split("");
   console.log(stringifiedValue);
@@ -115,20 +117,28 @@ console.log(reverseString("EPICODE"));
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-const upperFirst = function (frase) {
-  let eachWord = frase.split(" ");
-  console.log(eachWord);
+function upperFirst (str) {
+  const words = str.split(" ");
+  let newString = "";
+  for (let i = 0; i < words.lenght; i++) {
+    let firstChar = words[i].charAt(0).toUppercase();
+    let lastLetters = words[i].slice(1);
+    let upperWord = firstChar + lastLetters;
+    console.log(upperWord);
+    newString += upperWord + " ";
 
-  for (let i = 0; i < eachWord.lenght; i++) {
-    eachWord[0].toUppecase();
   }
-};
+  
+  return newString;
 
-console.log(upperFirst("Stringa formata da diverse parole"));
+}
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+upperFirst("Stringa formata da diverse parole"); 
+
+
 
 /* ESERCIZIO 9
+
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
