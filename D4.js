@@ -117,7 +117,7 @@ console.log(reverseString("EPICODE"));
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-function upperFirst (str) {
+function upperFirst(str) {
   const words = str.split(" ");
   let newString = "";
   for (let i = 0; i < words.lenght; i++) {
@@ -126,16 +126,12 @@ function upperFirst (str) {
     let upperWord = firstChar + lastLetters;
     console.log(upperWord);
     newString += upperWord + " ";
-
   }
-  
-  return newString;
 
+  return newString;
 }
 
-upperFirst("Stringa formata da diverse parole"); 
-
-
+upperFirst("Stringa formata da diverse parole");
 
 /* ESERCIZIO 9
 
@@ -143,10 +139,26 @@ upperFirst("Stringa formata da diverse parole");
  della stringa originale.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+const cutString = function (newstring2) {
+  let stringifiedValue = newstring2.split("");
+  console.log(stringifiedValue);
+  let slicedString = stringifiedValue.slice(1, -1);
+
+  return slicedString;
+};
+
+console.log(cutString("Ecco la nuova stringa"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  let arr = new Array(n);
+  for (i = 0; i < n; i++) {
+    arr[i] = Math.floor(Math.random() * 11);
+  }
+  return arr;
+}
+
+console.log(giveMeRandom(10));
